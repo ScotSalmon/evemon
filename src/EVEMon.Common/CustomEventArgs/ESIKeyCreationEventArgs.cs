@@ -25,7 +25,7 @@ namespace EVEMon.Common.CustomEventArgs
             ID = id;
             RefreshToken = refreshToken;
             // At some point the ability to use limited scopes would be nice
-            AccessMask = ulong.MaxValue;
+            AccessMask = (long)Enumerations.CCPAPI.CCPAPIMethodsEnum.BasicCharacterFeatures;
 
             if (charInfo.HasError)
                 CCPError = new CCPAPIError()

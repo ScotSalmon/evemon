@@ -33,10 +33,10 @@ namespace EVEMon.Common.Service
 
             if (string.IsNullOrEmpty(id) || string.IsNullOrEmpty(secret))
                 authService = new SSOAuthenticationService(NetworkConstants.SSODefaultAppID,
-                    null, NetworkConstants.SSOScopes);
+                    null, NetworkConstants.SSOScopesBasic);
             else
                 authService = new SSOAuthenticationService(id, secret, NetworkConstants.
-                    SSOScopes);
+                    SSOScopesBasic);
             return authService;
         }
 
