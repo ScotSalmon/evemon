@@ -127,6 +127,7 @@ namespace EVEMon.SettingsUI
             this.mainWindowPage = new EVEMon.Common.Controls.MultiPanel.MultiPanelPage();
             this.OverviewGroupBox = new System.Windows.Forms.GroupBox();
             this.overviewPanel = new System.Windows.Forms.Panel();
+            this.extraInfoComboBox = new System.Windows.Forms.ComboBox();
             this.cbShowSkillpointsOnOverview = new System.Windows.Forms.CheckBox();
             this.overviewPortraitSizeComboBox = new System.Windows.Forms.ComboBox();
             this.skillPlannerPage = new EVEMon.Common.Controls.MultiPanel.MultiPanelPage();
@@ -230,7 +231,6 @@ namespace EVEMon.SettingsUI
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.settingsFileStorageGroupBox = new System.Windows.Forms.GroupBox();
             this.settingsFileStorageControl = new EVEMon.SettingsUI.SettingsFileStorageControl();
-            this.extraInfoComboBox = new System.Windows.Forms.ComboBox();
             this.systemTrayIconGroupBox.SuspendLayout();
             this.bottomPanel.SuspendLayout();
             this.CharacterMonitorGroupBox.SuspendLayout();
@@ -1195,6 +1195,19 @@ namespace EVEMon.SettingsUI
             this.overviewPanel.Size = new System.Drawing.Size(393, 85);
             this.overviewPanel.TabIndex = 32;
             // 
+            // extraInfoComboBox
+            // 
+            this.extraInfoComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.extraInfoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.extraInfoComboBox.Items.AddRange(new object[] {
+            "No Extra Info",
+            "Show Location",
+            "Show Jobs"});
+            this.extraInfoComboBox.Location = new System.Drawing.Point(274, 18);
+            this.extraInfoComboBox.Name = "extraInfoComboBox";
+            this.extraInfoComboBox.Size = new System.Drawing.Size(116, 21);
+            this.extraInfoComboBox.TabIndex = 36;
+            // 
             // cbShowSkillpointsOnOverview
             // 
             this.cbShowSkillpointsOnOverview.AutoSize = true;
@@ -1304,7 +1317,6 @@ namespace EVEMon.SettingsUI
             // 
             // networkPage
             // 
-            this.networkPage.AutoScroll = true;
             this.networkPage.Controls.Add(this.esiSettingsGroupBox);
             this.networkPage.Controls.Add(this.ProxyServerGroupBox);
             this.networkPage.Controls.Add(this.esiApiMethodPermissionsGroupBox);
@@ -1323,7 +1335,7 @@ namespace EVEMon.SettingsUI
             this.esiSettingsGroupBox.Controls.Add(this.esiSettingsLabel);
             this.esiSettingsGroupBox.Controls.Add(this.clientSecretTextBox);
             this.esiSettingsGroupBox.Controls.Add(this.clientIDTextBox);
-            this.esiSettingsGroupBox.Location = new System.Drawing.Point(3, 194);
+            this.esiSettingsGroupBox.Location = new System.Drawing.Point(3, 156);
             this.esiSettingsGroupBox.Name = "esiSettingsGroupBox";
             this.esiSettingsGroupBox.Size = new System.Drawing.Size(409, 88);
             this.esiSettingsGroupBox.TabIndex = 1;
@@ -1381,9 +1393,9 @@ namespace EVEMon.SettingsUI
             this.ProxyServerGroupBox.Controls.Add(this.customProxyCheckBox);
             this.ProxyServerGroupBox.Controls.Add(this.lblNetworkPageProxy);
             this.ProxyServerGroupBox.Controls.Add(this.customProxyPanel);
-            this.ProxyServerGroupBox.Location = new System.Drawing.Point(3, 31);
+            this.ProxyServerGroupBox.Location = new System.Drawing.Point(3, 15);
             this.ProxyServerGroupBox.Name = "ProxyServerGroupBox";
-            this.ProxyServerGroupBox.Size = new System.Drawing.Size(409, 157);
+            this.ProxyServerGroupBox.Size = new System.Drawing.Size(409, 135);
             this.ProxyServerGroupBox.TabIndex = 0;
             this.ProxyServerGroupBox.TabStop = false;
             this.ProxyServerGroupBox.Text = "Proxy Server Settings";
@@ -1391,7 +1403,7 @@ namespace EVEMon.SettingsUI
             // customProxyCheckBox
             // 
             this.customProxyCheckBox.AutoSize = true;
-            this.customProxyCheckBox.Location = new System.Drawing.Point(9, 74);
+            this.customProxyCheckBox.Location = new System.Drawing.Point(9, 53);
             this.customProxyCheckBox.Name = "customProxyCheckBox";
             this.customProxyCheckBox.Size = new System.Drawing.Size(119, 17);
             this.customProxyCheckBox.TabIndex = 9;
@@ -1401,7 +1413,7 @@ namespace EVEMon.SettingsUI
             // 
             // customProxyPanel
             // 
-            this.customProxyPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.customProxyPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.customProxyPanel.Controls.Add(this.proxyPortTextBox);
             this.customProxyPanel.Controls.Add(this.lblProxyHostIPAddress);
@@ -1409,7 +1421,7 @@ namespace EVEMon.SettingsUI
             this.customProxyPanel.Controls.Add(this.lblProxyPort);
             this.customProxyPanel.Controls.Add(this.lblHTTP);
             this.customProxyPanel.Controls.Add(this.proxyHttpHostTextBox);
-            this.customProxyPanel.Location = new System.Drawing.Point(17, 97);
+            this.customProxyPanel.Location = new System.Drawing.Point(17, 76);
             this.customProxyPanel.Name = "customProxyPanel";
             this.customProxyPanel.Size = new System.Drawing.Size(386, 54);
             this.customProxyPanel.TabIndex = 6;
@@ -1439,7 +1451,7 @@ namespace EVEMon.SettingsUI
             // 
             // proxyHttpHostTextBox
             // 
-            this.proxyHttpHostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.proxyHttpHostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.proxyHttpHostTextBox.Location = new System.Drawing.Point(50, 24);
             this.proxyHttpHostTextBox.Name = "proxyHttpHostTextBox";
@@ -1454,9 +1466,9 @@ namespace EVEMon.SettingsUI
             this.esiApiMethodPermissionsGroupBox.Controls.Add(this.basicMethodsLabel);
             this.esiApiMethodPermissionsGroupBox.Controls.Add(this.advancedMethodsRadioButton);
             this.esiApiMethodPermissionsGroupBox.Controls.Add(this.advancedMethodsLabel);
-            this.esiApiMethodPermissionsGroupBox.Location = new System.Drawing.Point(3, 294);
+            this.esiApiMethodPermissionsGroupBox.Location = new System.Drawing.Point(3, 252);
             this.esiApiMethodPermissionsGroupBox.Name = "esiApiMethodPermissionsGroupBox";
-            this.esiApiMethodPermissionsGroupBox.Size = new System.Drawing.Size(409, 459);
+            this.esiApiMethodPermissionsGroupBox.Size = new System.Drawing.Size(409, 170);
             this.esiApiMethodPermissionsGroupBox.TabIndex = 3;
             this.esiApiMethodPermissionsGroupBox.TabStop = false;
             this.esiApiMethodPermissionsGroupBox.Text = "Permitted ESI API Methods";
@@ -1486,13 +1498,14 @@ namespace EVEMon.SettingsUI
             // 
             this.basicMethodsLabel.Location = new System.Drawing.Point(25, 63);
             this.basicMethodsLabel.Name = "basicMethodsLabel";
-            this.basicMethodsLabel.Size = new System.Drawing.Size(375, 63);
+            this.basicMethodsLabel.Size = new System.Drawing.Size(375, 21);
             this.basicMethodsLabel.TabIndex = 2;
+            this.basicMethodsLabel.Text = "For character monitoring, skill level planning, and skill queue monitoring.";
             this.basicMethodsLabel.Click += new System.EventHandler(this.basicMethodsLabel_Click);
             // 
             // advancedMethodsRadioButton
             // 
-            this.advancedMethodsRadioButton.Location = new System.Drawing.Point(6, 129);
+            this.advancedMethodsRadioButton.Location = new System.Drawing.Point(9, 87);
             this.advancedMethodsRadioButton.Name = "advancedMethodsRadioButton";
             this.advancedMethodsRadioButton.Size = new System.Drawing.Size(104, 24);
             this.advancedMethodsRadioButton.TabIndex = 2;
@@ -1502,10 +1515,11 @@ namespace EVEMon.SettingsUI
             // 
             // advancedMethodsLabel
             // 
-            this.advancedMethodsLabel.Location = new System.Drawing.Point(25, 156);
+            this.advancedMethodsLabel.Location = new System.Drawing.Point(25, 114);
             this.advancedMethodsLabel.Name = "advancedMethodsLabel";
-            this.advancedMethodsLabel.Size = new System.Drawing.Size(372, 287);
+            this.advancedMethodsLabel.Size = new System.Drawing.Size(372, 40);
             this.advancedMethodsLabel.TabIndex = 3;
+            this.advancedMethodsLabel.Text = resources.GetString("advancedMethodsLabel.Text");
             // 
             // emailNotificationsPage
             // 
@@ -2354,19 +2368,6 @@ namespace EVEMon.SettingsUI
             this.settingsFileStorageControl.Name = "settingsFileStorageControl";
             this.settingsFileStorageControl.Size = new System.Drawing.Size(416, 108);
             this.settingsFileStorageControl.TabIndex = 0;
-            // 
-            // extraInfoComboBox
-            // 
-            this.extraInfoComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.extraInfoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.extraInfoComboBox.Items.AddRange(new object[] {
-            "No Extra Info",
-            "Show Location",
-            "Show Jobs"});
-            this.extraInfoComboBox.Location = new System.Drawing.Point(274, 18);
-            this.extraInfoComboBox.Name = "extraInfoComboBox";
-            this.extraInfoComboBox.Size = new System.Drawing.Size(116, 21);
-            this.extraInfoComboBox.TabIndex = 36;
             // 
             // SettingsForm
             // 
