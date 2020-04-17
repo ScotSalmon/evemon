@@ -59,6 +59,10 @@ namespace EVEMon.SettingsUI
             settingsFileStorageControl.Font = FontFactory.GetFont("Tahoma", 8.25F);
             extraInfoComboBox.SelectedIndex = 0;
 
+            ToolTip scopesTooltip = new ToolTip();
+            scopesTooltip.SetToolTip(basicMethodsRadioButton, NetworkConstants.SSOScopesBasic);
+            scopesTooltip.SetToolTip(advancedMethodsRadioButton, NetworkConstants.SSOScopes);
+
             m_settings = Settings.Export();
             m_oldSettings = Settings.Export();
             m_preSelect = null;
